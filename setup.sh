@@ -37,14 +37,36 @@ cd ..
 rm -rf ./arc-theme
 
 
-# Now the kvantum theme for qt applications
+# Add the system colour scheme
+
+mkdir -p ~/.local/share/color-schemes
+cp /usr/share/color-schemes/KvArcDark.colors ~/.local/share/color-schemes/ArcDarkNord.colors
+
+cd ~/.local/share/color-schemes
+
+sed -i 's/'47,52,63'/'46,52,64'/gI' ArcDarkNord.colors
+sed -i 's/'56,60,74'/'59,66,82'/gI' ArcDarkNord.colors
+sed -i 's/'64,69,82'/'67,76,94'/gI' ArcDarkNord.colors
+sed -i 's/'86,89,101'/'76,86,106'/gI' ArcDarkNord.colors
+sed -i 's/'82,148,226'/'94,129,172'/gI' ArcDarkNord.colors
+
+
+# Use this colour scheme in kdeglobals
+
+sed -i 's/ColorScheme=[^\n]*/ColorScheme=ArcDarkNord/gI' ~/.config/kdeglobals
+
+
+
+# kvantum theme for qt applications
 
 mkdir -p ~/.config/Kvantum/ArcDarkNord
 cp /usr/share/Kvantum/KvArcDark/KvArcDark.kvconfig ~/.config/Kvantum/ArcDarkNord/ArcDarkNord.kvconfig
 cp /usr/share/Kvantum/KvArcDark/KvArcDark.svg ~/.config/Kvantum/ArcDarkNord/ArcDarkNord.svg
 
 
+
 cd ~/.config/Kvantum/ArcDarkNord
+
 
 # Replace the Arc colours with Nord colours and build the theme
 
@@ -71,3 +93,5 @@ find . -name "*" -type f -exec sed -i 's/'5294E2'/'5e81ac'/gI' {} \;
 echo 'Launching kvantummanager, remember to set the theme there to ArcDarkNord'
 
 kvantummanager
+
+
