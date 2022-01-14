@@ -49,6 +49,7 @@ sed -i 's/'56,60,74'/'59,66,82'/gI' ArcDarkNord.colors
 sed -i 's/'64,69,82'/'67,76,94'/gI' ArcDarkNord.colors
 sed -i 's/'86,89,101'/'76,86,106'/gI' ArcDarkNord.colors
 sed -i 's/'82,148,226'/'94,129,172'/gI' ArcDarkNord.colors
+sed -i 's/'KvArcDark'/'ArcDarkNord'/gI' ArcDarkNord.colors
 
 
 # Use this colour scheme in kdeglobals
